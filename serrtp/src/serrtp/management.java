@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel; 
 import javax.swing.table.DefaultTableModel;
 public class management {
-    
+    //this is commenet
      private static ImageIcon kk(String p,String d)
     {
     java.net.URL im= management.class.getResource(p);
