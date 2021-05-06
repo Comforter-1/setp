@@ -1041,7 +1041,7 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
                 	 Class.forName("com.mysql.jdbc.Driver");
                      Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
                 	Statement s=c.createStatement();
-              String q1="select fname,mname,lname,bplace,honum,pnum,occup,woreda,marstat from idform where id='"+tfg.getText()+"'";
+              String q1="select fname,mname,lname,bplace,honum,pnum,occup,woreda,marstat from register where id='"+tfg.getText()+"'";
              ResultSet r=s.executeQuery(q1);
              while( r.next()){
               String fnn=r.getString("fname");
@@ -1053,7 +1053,7 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
               String job=r.getString("occup");
               String wored=r.getString("woreda");
               String mar=r.getString("marstat");
-              
+           
               
               tfg1.setText(fnn);
               tfg2.setText(mnn);
@@ -1064,7 +1064,7 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
               tfg7.setText(job);
               tfg8.setText(wored);
               tfgm.setText(mar);
-             
+              
               s.close();
               c.close();
              }
