@@ -103,7 +103,7 @@ public class management {
     
     JButton ba4=new JButton("SEARCHING DWELLER");
     ba4.setBackground(Color.WHITE);
-    JButton ba5=new JButton("DELETING A RECORD OF DWELLER");
+    JButton ba5=new JButton("DELETING A RECORD OF DWELLER ");
     ba5.setBackground(Color.white);
     JPanel pa4=new JPanel();
     pa4.add(ba4);pa4.add(ba5);
