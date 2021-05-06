@@ -272,13 +272,13 @@ public class management {
                 
                 JOptionPane.showMessageDialog(null, "ID CAN NOT BE EMPTY !");
                 }
+                
              try{
             	 Class.forName("com.mysql.jdbc.Driver");
                  Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
               Statement s=c.createStatement();
               String q="insert into register(fname,mname,lname,id,mothername,bdate,bplace,honum,pnum,occup,marstat,repemrg,woreda,regdate,adminname,zone,kelel,city) values('"+tfb.getText()+"','"+tfb1.getText()+"','"+tfb2.getText()+"','"+tfb22.getText()+"','"+tfb3.getText()+"','"+tfb4.getText()+"','"+tfb5.getText()+"','"+tfb6.getText()+"','"+tfb7.getText()+"','"+tfb8.getText()+"','"+tfb88.getText()+"','"+tfb9.getText()+"','"+tfb10.getText()+"','"+tfb11.getText()+"','"+tfb12.getText()+"','"+tfZ.getText()+"','"+tfK.getText()+"','"+tfC.getText()+"')";
-              //String q="insert into register(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) values('"+tfb.getText()+"','"+tfb1.getText()+"','"+tfb2.getText()+"','"+tfb22.getText()+"','"+tfb3.getText()+"','"+tfb4.getText()+"','"+tfb5.getText()+"','"+tfb6.getText()+"','"+tfb7.getText()+"','"+tfb8.getText()+"','"+tfb88.getText()+"','"+tfb9.getText()+"','"+tfb10.getText()+"','"+tfb11.getText()+"','"+tfb12.getText()+"','"+tfZ.getText()+"','"+tfK.getText()+"','"+tfC.getText()+"')";
-              int r=s.executeUpdate(q);
+               int r=s.executeUpdate(q);
               if(r>0){
                 JOptionPane.showMessageDialog(null, "REGISTRATION SUCCESSFUL!!!");
               }
@@ -426,9 +426,9 @@ public class management {
      R00.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
              try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");
-               Statement s=c.createStatement();
+            	 Class.forName("com.mysql.jdbc.Driver");
+                 Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root",""); 
+                 Statement s=c.createStatement();
               String q1="insert into birthform values('"+tfc.getText()+"','"+tfcc.getText()+"','"+tfc1.getText()+"','"+tfc2.getText()+"','"+tfc3.getText()+"','"+tfc4.getText()+"','"+tfc5.getText()+"','"+tfc6.getText()+"')";
               int r=s.executeUpdate(q1);
               if(r>0){
@@ -560,12 +560,8 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
             public void actionPerformed(ActionEvent e) { 
             
             try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");
-                /*
-              Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */
+            	 Class.forName("com.mysql.jdbc.Driver");
+                 Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
               Statement s=c.createStatement();
               String q1="insert into wedding values('"+f2a.getText()+"','"+f3a.getText()+"','"+f4a.getText()+"','"+f5a.getText()+"','"+f6a.getText()+"','"+f7a.getText()+"','"+f8a.getText()+"','"+f9a.getText()+"','"+f6aa.getText()+"','"+f7aa.getText()+"','"+f8aa.getText()+"','"+tf9aa.getText()+"','"+faa.getText()+"','"+f0a.getText()+"','"+f1a.getText()+"','"+fa1.getText()+"','"+fa2.getText()+"','"+fa3.getText()+"','"+fa33.getText()+"','"+fa4.getText()+"','"+fa5.getText()+"')";
               int r=s.executeUpdate(q1);
@@ -615,12 +611,9 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
         mo.addColumn("approver");
         mo.addColumn("datte");
          try{
-             Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");
-               /* 
-              Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-             */ Statement s=c.createStatement();
+        	 Class.forName("com.mysql.jdbc.Driver");
+             Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+             Statement s=c.createStatement();
               String q1="select*from wedding";
              ResultSet r=s.executeQuery(q1);
             
@@ -755,12 +748,10 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
          bd.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");
-                    /*
+              
                Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+                 Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+              Statement s=c.createStatement();
               String q1="insert into rent(lesfullname,lesprevaddress,lesid,dwellerunderles,lesjob,lesgender,lesBOD,renthomaddress,renthomnum,renthomsize,rentprice,adminname,approvdate) values('"+tfd.getText()+"','"+tfd1.getText() +"','"+tfd2.getText()+"','"+tfd3.getText()+"','"+tfd41.getText()+"','"+tfd5.getText()+"','"+tfd6.getText()+"','"+tfd7.getText()+"','"+tfd8.getText()+"','"+tfd9.getText()+"','"+tfd10.getText()+"','"+tfd11.getText()+"','"+tfd12.getText()+"')";
            
               int r=s.executeUpdate(q1);
@@ -811,12 +802,9 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
         mo.addColumn("approvdate");
         
          try{
-             Class.forName("org.apache.derby.jdbc.ClientDriver");
-             Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");
-              /*  
-              Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+        	 Class.forName("com.mysql.jdbc.Driver");
+             Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+             Statement s=c.createStatement();
               String q1="select*from rent";
              ResultSet r=s.executeQuery(q1);
             
@@ -934,9 +922,9 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
                   
       public void actionPerformed(ActionEvent e) {
                        try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");   
-               Statement s=c.createStatement();
+                    	   Class.forName("com.mysql.jdbc.Driver");
+                           Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+                    	   Statement s=c.createStatement();
               String q1="insert into taxform values('"+tf1.getText()+"','"+tff1.getText()+"','"+tff11.getText()+"','"+tfe1.getText()+"','"+tf2.getText()+"','"+tf3.getText()+"','"+tf4.getText()+"','"+tf5.getText()+"','"+tf6.getText()+"')";
               int r=s.executeUpdate(q1);
                if(r>0){
@@ -1050,12 +1038,9 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
             public void actionPerformed(ActionEvent e) {
                 try{
                     
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");
-                    /*
-                Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+                	 Class.forName("com.mysql.jdbc.Driver");
+                     Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+                	Statement s=c.createStatement();
               String q1="select fname,mname,lname,bplace,honum,pnum,occup,woreda,marstat from idform where id='"+tfg.getText()+"'";
              ResultSet r=s.executeQuery(q1);
              while( r.next()){
@@ -1171,11 +1156,10 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
                bh.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                      try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");     
-               /* Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+            
+                    	 Class.forName("com.mysql.jdbc.Driver");
+                         Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+                         Statement s=c.createStatement();
               String q1="select fname,mname,lname,pnum from idform where id='"+tfh.getText()+"'";
              ResultSet r=s.executeQuery(q1);
              while( r.next()){
@@ -1183,6 +1167,7 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
               String mnn=r.getString("mname");
               String lnn=r.getString("lname");
               String phone=r.getString("pnum");
+              
              
              tfbg1.setText(fnn);
              tfbg2.setText(mnn);
@@ -1207,11 +1192,10 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
                   public void actionPerformed(ActionEvent e) { 
                 
                  try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");     
-               /* Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-             */ Statement s=c.createStatement();
+            
+                	 Class.forName("com.mysql.jdbc.Driver");
+                     Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+                	 Statement s=c.createStatement();
               String q1="delete from idform where id='"+tfh.getText()+"'";
              int r=s.executeUpdate(q1);
              if(r>0){
@@ -1331,11 +1315,9 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
                bh.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                      try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");      
-              /*Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+                    	 Class.forName("com.mysql.jdbc.Driver");
+                         Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+                    	 Statement s=c.createStatement();
               String q1="select fname,mname,lname,mothername,bdate,bplace,honum,pnum,occup,marstat,repemrg,woreda from idform where id='"+tfh.getText()+"'";
               ResultSet r=s.executeQuery(q1);
                  while( r.next()){
@@ -1374,11 +1356,9 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
             public void actionPerformed(ActionEvent e) { 
                 
                  try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");     
-              /*  Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+                	 Class.forName("com.mysql.jdbc.Driver");
+                     Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+                	 Statement s=c.createStatement();
               String q1="update idform set fname='"+tfbg1.getText()+"',mname='"+tfbg2.getText()+"',lname='"+tfbg3.getText()+"',mothername='"+tfbg4.getText()+"',bdate='"+tfbg5.getText()+"',bplace='"+tfbg6.getText()+"',honum='"+tfbg7.getText()+"',pnum='"+tfbg8.getText()+"',occup='"+tfbg9.getText()+"',marstat='"+tfbg10.getText()+"',repemrg='"+tfbg11.getText()+"',woreda='"+tfbg12.getText()+"'where id='"+tfh.getText()+"'";
              int r=s.executeUpdate(q1);
              if(r>0){
@@ -1429,11 +1409,9 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
            
        
          try{
-           Class.forName("org.apache.derby.jdbc.ClientDriver");
-           Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");     
-           /*   Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+        	 Class.forName("com.mysql.jdbc.Driver");
+             Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
+        	 Statement s=c.createStatement();
               String q1="select*from taxform";
              ResultSet r=s.executeQuery(q1);
             
