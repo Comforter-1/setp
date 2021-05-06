@@ -273,10 +273,11 @@ public class management {
                 JOptionPane.showMessageDialog(null, "ID CAN NOT BE EMPTY !");
                 }
              try{
-              Class.forName("org.apache.derby.jdbc.ClientDriver");
-              Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");
+            	 Class.forName("com.mysql.jdbc.Driver");
+                 Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/setp","root","");
               Statement s=c.createStatement();
-              String q="insert into idform(fname,mname,lname,id,mothername,bdate,bplace,honum,pnum,occup,marstat,repemrg,woreda,regdate,adminname,zone,kelele,city) values('"+tfb.getText()+"','"+tfb1.getText()+"','"+tfb2.getText()+"','"+tfb22.getText()+"','"+tfb3.getText()+"','"+tfb4.getText()+"','"+tfb5.getText()+"','"+tfb6.getText()+"','"+tfb7.getText()+"','"+tfb8.getText()+"','"+tfb88.getText()+"','"+tfb9.getText()+"','"+tfb10.getText()+"','"+tfb11.getText()+"','"+tfb12.getText()+"','"+tfZ.getText()+"','"+tfK.getText()+"','"+tfC.getText()+"')";
+              String q="insert into register(fname,mname,lname,id,mothername,bdate,bplace,honum,pnum,occup,marstat,repemrg,woreda,regdate,adminname,zone,kelel,city) values('"+tfb.getText()+"','"+tfb1.getText()+"','"+tfb2.getText()+"','"+tfb22.getText()+"','"+tfb3.getText()+"','"+tfb4.getText()+"','"+tfb5.getText()+"','"+tfb6.getText()+"','"+tfb7.getText()+"','"+tfb8.getText()+"','"+tfb88.getText()+"','"+tfb9.getText()+"','"+tfb10.getText()+"','"+tfb11.getText()+"','"+tfb12.getText()+"','"+tfZ.getText()+"','"+tfK.getText()+"','"+tfC.getText()+"')";
+              //String q="insert into register(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) values('"+tfb.getText()+"','"+tfb1.getText()+"','"+tfb2.getText()+"','"+tfb22.getText()+"','"+tfb3.getText()+"','"+tfb4.getText()+"','"+tfb5.getText()+"','"+tfb6.getText()+"','"+tfb7.getText()+"','"+tfb8.getText()+"','"+tfb88.getText()+"','"+tfb9.getText()+"','"+tfb10.getText()+"','"+tfb11.getText()+"','"+tfb12.getText()+"','"+tfZ.getText()+"','"+tfK.getText()+"','"+tfC.getText()+"')";
               int r=s.executeUpdate(q);
               if(r>0){
                 JOptionPane.showMessageDialog(null, "REGISTRATION SUCCESSFUL!!!");
@@ -935,9 +936,7 @@ JPanel pb5=new JPanel();JPanel pb6=new JPanel();JPanel pb7=new JPanel();JPanel p
                        try{
               Class.forName("org.apache.derby.jdbc.ClientDriver");
               Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/KEBELE","ATSE","0000");   
-              /*Class.forName("com.mysql.jdbc.Driver");
-              Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/kebele","root","abraham");
-              */Statement s=c.createStatement();
+               Statement s=c.createStatement();
               String q1="insert into taxform values('"+tf1.getText()+"','"+tff1.getText()+"','"+tff11.getText()+"','"+tfe1.getText()+"','"+tf2.getText()+"','"+tf3.getText()+"','"+tf4.getText()+"','"+tf5.getText()+"','"+tf6.getText()+"')";
               int r=s.executeUpdate(q1);
                if(r>0){
