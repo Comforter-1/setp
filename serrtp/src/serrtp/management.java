@@ -18,6 +18,7 @@ public class management {
     
      private static ImageIcon kk(String p,String d)
     {
+         /// new edit
     java.net.URL im= management.class.getResource(p);
     if(im!=null)
         {
